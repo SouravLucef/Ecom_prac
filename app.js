@@ -19,6 +19,11 @@ app.post("/creat_user",(req,res) =>{
     console.log(req);
 })
 
+app.get("/users",(req,res) =>{
+    let users=["Sourav","Nirveek","Abhirup"];
+    res.send("Here are your users" + users);
+})
+
 app.listen(5000,()=>{
     console.log("Listening to port 5000");
 });
