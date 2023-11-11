@@ -21,7 +21,15 @@ app.post("/creat_user",(req,res) =>{
 
 app.get("/users",(req,res) =>{
     let users=["Sourav","Nirveek","Abhirup"];
-    res.send("Here are your users" + users);
+    // res.send("Here are your users" + users);
+    res.send(
+        {
+         "users":  users, 
+        });
+})
+
+app.delete("/delete",(req,res)=> {
+
 })
 
 app.listen(5000,()=>{
