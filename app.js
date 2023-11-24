@@ -21,7 +21,7 @@ app.post("/creat_user",(req,res) =>{
     console.log(req.body); // we write here req.body as we give our date in body as a json file
     
     // res.send("created your user "+ req.body.name+" whose age is "+req.body.age);
-    res.send(`User name is ${req.body.name} and his age is ${req.body.age}`)
+    res.send(`User name is ${req.body.name} and his age is ${req.body.age}`) //javascript tempalte(${..}) is used here so it requires backtick(`) insted of ("").
 })
 
 app.get("/users",(req,res) =>{
