@@ -1,5 +1,7 @@
 const express = require("express");
 
+const mongoose=require("mongoose");
+
 const app = express();
 
 app.use(express.json()); //conver the req into json file so that it can understand
