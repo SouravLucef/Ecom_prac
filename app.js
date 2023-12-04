@@ -10,8 +10,8 @@ const connectDB=async()=>{
     //now we have to defiune schemas for insert ujpdate delete ,,we do not need for only get operation
     const productSchema= new mongoose.Schema({})
 
-    //now we write a model which checks the schemas in mongoDB and applied which we hae to get and wnich not to 
-    //example we have 3 field but we gave data of 4 field so model will only fetch data of 3 field
+    //now we write a model which checks the schemas in mongoDB and applied which we have to get and wnich not to 
+    //example we have 3 field in schemas but we have database of 5 field so model will only fetch data of 3 field
     const product=mongoose.model('product',productSchema);
 
     const data = await product.find();
