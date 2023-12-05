@@ -1,26 +1,31 @@
 const express = require("express");
 
-const mongoose=require("mongoose");
+require('./db/config');
+const User = require("./db/User");
+
+// const mongoose=require("mongoose");
 
 const app = express();
 
 //here we connect the mongoose by givig the connection route
-const connectDB=async()=>{
-    mongoose.connect('mongodb://localhost:27017/e-com');//mongodb runs on this port
-    //now we have to defiune schemas for insert ujpdate delete ,,we do not need for only get operation
-    const productSchema= new mongoose.Schema({})
+// const connectDB=async()=>{
+//     mongoose.connect('mongodb://localhost:27017/e-com');//mongodb runs on this port
+//     //now we have to defiune schemas for insert ujpdate delete ,,we do not need for only get operation
+//     const productSchema= new mongoose.Schema({})
 
-    //now we write a model which checks the schemas in mongoDB and applied which we have to get and wnich not to 
-    //example we have 3 field in schemas but we have database of 5 field so model will only fetch data of 3 field
-    const product=mongoose.model('product',productSchema);
+//     //now we write a model which checks the schemas in mongoDB and applied which we have to get and wnich not to 
+//     //example we have 3 field in schemas but we have database of 5 field so model will only fetch data of 3 field
+//     const product=mongoose.model('product',productSchema);
+    
 
-    const data = await product.find();
+//     //grtting data from databse is a time taking process so we use await
+//     const data = await product.find();
 
-    console.log(data);
-}
-connectDB();
+//     console.log(data);
+// }
+// connectDB();
 
-app.use(express.json()); //conver the req into json file so that it can understand
+app.use(express.json()); //conver the req(given data) into json file so that it can understand
 
 const customMiddleware = (req,res,next) =>{
     console.log("Welcome to my middleware");
