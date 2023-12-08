@@ -26,7 +26,7 @@ const app = express();
 // }
 // connectDB();
 
-app.use(express.json()); //conver the req(given data) into json file so that it can understand
+app.use(express.json()); //convert the req(given data) into json file so that it can understand
 
 const customMiddleware = (req,res,next) =>{
     console.log("Welcome to my middleware");
@@ -48,6 +48,15 @@ app.post("/creat_user",(req,res) =>{
     // res.send("created your user "+ req.body.name+" whose age is "+req.body.age);
     res.send(`User name is ${req.body.name} and his age is ${req.body.age}`) //javascript tempalte(${..}) is used here so it requires backtick(`) insted of ("").
 })
+
+//now to save the data given by users in databse we use async in function.
+app.post("/register",async (req,res) =>{
+    let user = new User(req.body);
+    let result = user.save();
+    //res.send("api is running");
+    res.send(req.body); 
+})
+
 
 app.get("/users",(req,res) =>{
     let users=["Sourav","Nirveek","Abhirup"];
