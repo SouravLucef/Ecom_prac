@@ -52,7 +52,7 @@ app.post("/creat_user",(req,res) =>{
 //now to save the data given by users in databse we use async in function.
 app.post("/register",async (req,res) =>{
     let user = new User(req.body);
-    let result = user.save();
+    let result = await user.save();     //this saves the data in databse
     //res.send("api is running");
     res.send(result); 
 })
