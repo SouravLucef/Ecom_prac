@@ -1,7 +1,8 @@
 const express = require("express");
 
-require('./db/config');
-const User = require("./db/User");
+require('./db/config');//import the config file
+const User = require("./db/User");//import the user file
+
 
 // const mongoose=require("mongoose");
 
@@ -34,6 +35,7 @@ const customMiddleware = (req,res,next) =>{
 
 app.use(customMiddleware);
 
+//now we define the routes(the link the will consume the API) using expressjs
 app.get("/",(req,res) =>{
     res.send("App is running");
 

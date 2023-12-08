@@ -1,2 +1,4 @@
 const mongoose=require('mongoose');
-mongoose.connect("mongodb://localhost:27017/e-com")
+
+//now we have to connect to the local dbms of mongoose
+mongoose.connect("mongodb://0.0.0.0:27017/e-com")
