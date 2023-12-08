@@ -54,7 +54,7 @@ app.post("/register",async (req,res) =>{
     let user = new User(req.body);
     let result = user.save();
     //res.send("api is running");
-    res.send(req.body); 
+    res.send(result); 
 })
 
 
