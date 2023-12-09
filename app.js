@@ -1,5 +1,5 @@
 const express = require("express");
-
+const cors =require("cors");
 require('./db/config');//import the config file
 const User = require("./db/User");//import the user file
 
@@ -25,6 +25,7 @@ const app = express();
 //     console.log(data);
 // }
 // connectDB();
+app.use(cors());
 
 app.use(express.json()); //convert the req(given data) into json file so that it can understand
 
